@@ -1,66 +1,88 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import { Button } from '@nextui-org/react';
 import Link from 'next/link.js';
 import Image from 'next/image.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { MyButtonLinked, MyButtonWithIcon } from '@/components/button';
 
 export default function App() {
+  const [collapse, setCollapse] = useState(false);
+
+  console.log('asda', collapse);
   return (
     <navbar className=' w-full flex flex-col'>
-      <div className='  max-sm:flex-col max-sm:items-center max-sm:justify-center  flex flex-row items-center justify-between px-14 py-6  w-full  '>
-        <div className=' sm:flex gap-4 max-sm:space-y-4 max-sm:mb-5  '>
-          <div>
-            <Link href='#' aria-current='page'>
-              Anasayfa
-            </Link>
-          </div>
-          <div>
-            <Link color='foreground' href='#'>
-              Bireysel
-            </Link>
-          </div>
-          <div>
-            <Link color='foreground' href='#'>
-              Kurumsal
-            </Link>
-          </div>
-          <div>
-            <Link color='foreground' href='#'>
-              İletişim
-            </Link>
-          </div>
+      <div className='  max-sm:flex-col max-sm:items-center max-sm:justify-center  flex flex-row items-center justify-between px-4 py-6  w-full max-w-7xl mx-auto'>
+        <div className='flex flex-row lg:hidden items-center justify-between w-full mb-5'>
+          <button onClick={() => setCollapse(!collapse)}>
+            <FontAwesomeIcon icon={faBars} className={'text-lg'} />
+          </button>
         </div>
-        <div className='  flex flex-row items-center space-x-12'>
-          <Button className='rounded-md bg-white text-[#0A296C] border-gray-300 border px-4 py-2' href='#'>
-            Giriş Yap
-          </Button>
-          <div>
-            <Button className='rounded-md  bg-[#2445D8]' as={Link} color='primary' href='#'>
-              Hemen başvur
-            </Button>
+
+        <div className='md:flex md:justify-between md:items-center md:w-full    '>
+          <div className={`flex gap-4  max-sm:mb-5 font-medium text-base md:space-x-4`}>
+            <div
+              className={`${collapse ? 'flex' : 'hidden'}   gap-4  max-sm:mb-5 font-medium text-base  flex flex-col `}
+            >
+              <div className='flex flex-row items-center space-x-5 mb-5'>
+                <div>
+                  <Link href='#' aria-current='page'>
+                    Anasayfa
+                  </Link>
+                </div>
+                <div>
+                  <Link color='foreground' href='#'>
+                    Bireysel
+                  </Link>
+                </div>
+                <div>
+                  <Link color='foreground' href='#'>
+                    Kurumsal
+                  </Link>
+                </div>
+                <div>
+                  <Link color='foreground' href='#'>
+                    İletişim
+                  </Link>
+                </div>{' '}
+              </div>
+
+              <div className='flex flex-row items-center space-x-5'>
+                {' '}
+                <a
+                  className='rounded-md bg-white text-[#0A296C] border-[#D0D5DD] hover:bg-[#2445D8] hover:text-white transition-all border px-6 py-3.5 font-semibold text-base'
+                  href='#'
+                >
+                  Giriş Yap
+                </a>
+                <a
+                  className='rounded-md font-semibold text-base px-6 py-3.5 bg-[#2445D8] text-white hover:bg-[#2445D8]/90 transition-all'
+                  color='primary'
+                  href='#'
+                >
+                  Hemen başvur
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div className=' max-sm:hidden '>
-        <div className='relative'>
-          <Image className='h-2/6 lg:h-1/3' width={30000} height={540} alt='xd' src={'/sectionOne.png'}></Image>
-          <div className='  flex flex-col items-start space-y-12  absolute top-1/2 left-1/3 transform -translate-x-1/2 -translate-y-1/2  w-1/2'>
-            <h1 className='text-xl  lg:text-6xl font-bold text-white'>Suscipit duis faucibus vestibulum fusce amet.</h1>
-            <p className=' text-medium lg:text-lg text-white mt-2 w-2/3 '>
-              Scelerisque eu integer dolor faucibus nunc quam auctor sed. Vulputate vulputate turpis convallis nibh
-              donec arcu mauris.
-            </p>
-            <div className='flex space-x-6 justify-center mt-4'>
-              <div style={{ backgroundColor: '#2445D8' }} className=' '>
-                <button className=' text-white font-bold py-3 pl-5 pr-3 mr-2 rounded text-2xl'>Keşfet</button>
-                <FontAwesomeIcon
-                  icon={faAngleRight}
-                  className='fas fa-check pr-4'
-                  style={{ color: 'white' }}
-                ></FontAwesomeIcon>
+
+      <div className='header-bg py-36'>
+        <div className='max-w-7xl mx-auto px-4 max-md:pl-8 '>
+          <div className={'grid grid-cols-2'}>
+            <div className='text-white  max-md:w-80  space-y-8'>
+              <h1 className='text-5xl font-bold max-md:text-4xl  '>Suscipit duis faucibus vestibulum fusce amet.</h1>
+              <p className='text-base  opacity-80 font-medium'>
+                Scelerisque eu integer dolor faucibus nunc quam auctor sed. <br />
+                Vulputate vulputate turpis convallis nibh donec arcu mauris.
+              </p>
+              <div className='flex flex-row items-center'>
+                <MyButtonWithIcon title={'Keşfet'} icon={<FontAwesomeIcon icon={faChevronRight} />} />
+                <MyButtonLinked title={'Hemen Başvur'} />
               </div>
-              <button className=' text-white font-bold py-2 px-4 rounded'>Hemen Başvur</button>
             </div>
           </div>
         </div>

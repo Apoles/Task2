@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.header-bg {
+  background-image: url('/sectionOne.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+.shadow-ornek {
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.1);
+}
+.shadow-ornek-2 {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+}
