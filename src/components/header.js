@@ -22,50 +22,67 @@ export default function App() {
         </div>
 
         <div className='md:flex md:justify-between md:items-center md:w-full    '>
-          <div className={`flex gap-4  max-sm:mb-5 font-medium text-base md:space-x-4`}>
-            <div
-              className={`${collapse ? 'flex' : 'hidden'}   gap-4  max-sm:mb-5 font-medium text-base  flex flex-col `}
-            >
-              <div className='flex flex-row items-center space-x-5 mb-5'>
-                <div>
-                  <Link href='#' aria-current='page'>
-                    Anasayfa
-                  </Link>
-                </div>
-                <div>
-                  <Link color='foreground' href='#'>
-                    Bireysel
-                  </Link>
-                </div>
-                <div>
-                  <Link color='foreground' href='#'>
-                    Kurumsal
-                  </Link>
-                </div>
-                <div>
-                  <Link color='foreground' href='#'>
-                    İletişim
-                  </Link>
-                </div>{' '}
-              </div>
-
-              <div className='flex flex-row items-center space-x-5'>
-                {' '}
-                <a
-                  className='rounded-md bg-white text-[#0A296C] border-[#D0D5DD] hover:bg-[#2445D8] hover:text-white transition-all border px-6 py-3.5 font-semibold text-base'
-                  href='#'
-                >
-                  Giriş Yap
-                </a>
-                <a
-                  className='rounded-md font-semibold text-base px-6 py-3.5 bg-[#2445D8] text-white hover:bg-[#2445D8]/90 transition-all'
-                  color='primary'
-                  href='#'
-                >
-                  Hemen başvur
-                </a>
-              </div>
+          <div className={`flex gap-4  max-sm:mb-5 font-medium text-base md:space-x-4 max-sm:hidden `}>
+            <div>
+              <Link href='#' aria-current='page'>
+                Anasayfa
+              </Link>
             </div>
+            <div>
+              <Link color='foreground' href='#'>
+                Bireysel
+              </Link>
+            </div>
+            <div>
+              <Link color='foreground' href='#'>
+                Kurumsal
+              </Link>
+            </div>
+            <div>
+              <Link color='foreground' href='#'>
+                İletişim
+              </Link>
+            </div>
+          </div>
+
+          <div className={`${collapse ? 'flex' : 'hidden'}  gap-4  max-sm:mb-5 font-medium text-base `}>
+            <div>
+              <Link href='#' aria-current='page'>
+                Anasayfa
+              </Link>
+            </div>
+            <div>
+              <Link color='foreground' href='#'>
+                Bireysel
+              </Link>
+            </div>
+            <div>
+              <Link color='foreground' href='#'>
+                Kurumsal
+              </Link>
+            </div>
+            <div>
+              <Link color='foreground' href='#'>
+                İletişim
+              </Link>
+            </div>
+          </div>
+
+          <div className='  flex flex-row items-center space-x-8'>
+            <a
+              className='rounded-md bg-white text-[#0A296C] border-[#D0D5DD] hover:bg-[#2445D8] hover:text-white transition-all border px-6 py-3.5 font-semibold text-base'
+              href='#'
+            >
+              Giriş Yap
+            </a>
+
+            <a
+              className='rounded-md font-semibold text-base px-6 py-3.5 bg-[#2445D8] text-white hover:bg-[#2445D8]/90 transition-all'
+              color='primary'
+              href='#'
+            >
+              Hemen başvur
+            </a>
           </div>
         </div>
       </div>
