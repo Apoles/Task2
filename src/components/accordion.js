@@ -8,7 +8,7 @@ export default function MyAccordion() {
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.';
 
   return (
-    <div className='bg-[#D9DBE9] m-auto w-full py-24   flex flex-col items-center justify-center gap-12 max-md:px-4  '>
+    <div className='bg-[#D9DBE9] m-auto w-full py-24    flex flex-col items-center justify-center gap-12 max-md:px-4  '>
       <div className='flex flex-col items-center m-auto w-full sm:w-1/2 max-w-7xl   text-center gap-3'>
         <h1 className='text-[#0F3487] text-3xl font-bold'>Amet, suspendisse nullam tellus gravida arcu.</h1>
         <p className=' text-[#0A296C] w-3/4'>
@@ -16,8 +16,8 @@ export default function MyAccordion() {
           adipiscing aenean imperdiet enim sed.
         </p>
       </div>
-      <div className=' bg-white sm:w-1/2  w-full   sm:px-24 sm:py-12 p-4    rounded-xl'>
-        <Accordion className='max-w-7xl  text-[#0A296C]'>
+      <div className=' bg-white  lg:w-1/2   w-full mx-56       sm:mx-24 sm:py-12 px-8   rounded-xl'>
+        <Accordion className='  max-w-7xl space-y-4  text-[#0A296C]'>
           <AccordionItem
             classNames={{ title: 'text-[#0A296C]' }}
             key='1'

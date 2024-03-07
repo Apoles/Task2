@@ -11,8 +11,8 @@ export default function MyFooter() {
           <div className='mb-6 md:mb-0 w-1/4 max-md:hidden '>
             <p className='text-[#0A296C]'>Id donec quis eu quam neque. Nulla at ultricies volutpat, vel.</p>
           </div>
-          <div className='grid grid-cols-2 gap-8 sm:gap-32 sm:grid-cols-4 md:space-x-1 w-3/4 sm:pl-32 max-sm:container max-sm:pl-6  '>
-            <div>
+          <div className='grid grid-cols-2 gap-8  sm:grid-cols-4 md:space-x-1 w-3/4 sm:pl-32 max-sm:container max-sm:pl-6  '>
+            <div className=''>
               <h2 className=' mb-6 text-sm font-semibold text-[#0A296C] uppercase '>Product</h2>
               <ul className=' space-y-3 text-[#0f3487] text-base font-medium '>
                 <li className=''>
